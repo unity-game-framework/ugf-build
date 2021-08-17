@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "com.ugf.build": {
-      "version": "file:Package",
+      "version": "file:UGF.Build",
       "depth": 0,
       "source": "embedded",
       "dependencies": {}
