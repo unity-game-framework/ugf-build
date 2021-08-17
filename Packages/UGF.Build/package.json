@@ -20,6 +20,8 @@
   },
   "dependencies": {
     "com.ugf.editortools": "1.12.0",
-    "com.ugf.customsettings": "3.4.1"
+    "com.ugf.customsettings": "3.4.1",
+    "com.ugf.runtimetools": "2.3.0",
+    "com.ugf.builder": "2.0.1"
   }
 }
