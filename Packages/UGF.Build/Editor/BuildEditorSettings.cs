@@ -13,6 +13,11 @@ namespace UGF.Build.Editor
             nameof(BuildEditorSettings)
         );
 
+        public static BuildSetupAsset GetSetup(BuildTargetGroup buildTargetGroup, string name)
+        {
+            return TryGetSetup(buildTargetGroup, name, out BuildSetupAsset setup) ? setup : throw new ArgumentException($@"Setup not found by the specified group and name: '{buildTargetGroup}', '{name}'.");
+        }
+
         public static bool TryGetSetup(BuildTargetGroup buildTargetGroup, string name, out BuildSetupAsset setup)
         {
             if (string.IsNullOrEmpty(name)) throw new ArgumentException("Value cannot be null or empty.", nameof(name));
