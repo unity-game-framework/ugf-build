@@ -66,11 +66,13 @@ namespace UGF.Build.Editor
             using (new LabelWidthChangeScope(-m_padding))
             {
                 var rectPlatformName = new Rect(position.x, position.y, position.width, height);
-                var rectProfiles = new Rect(position.x, rectPlatformName.yMax + space, position.width, height);
+                var rectSetups = new Rect(position.x, rectPlatformName.yMax + space, position.width, height);
 
                 EditorGUI.LabelField(rectPlatformName, $"Settings for {platform.Label.text}");
 
-                GetListDrawer(name, propertySettings).DrawGUI(rectProfiles);
+                ReorderableListDrawer drawer = GetListDrawer(name, propertySettings);
+
+                drawer.DrawGUI(rectSetups);
             }
         }
 
@@ -81,11 +83,11 @@ namespace UGF.Build.Editor
 
             string name = GetSelectedGroupName();
             SerializedProperty propertySettings = OnGetSettings(propertyGroups, name);
-            SerializedProperty propertyProfiles = propertySettings.FindPropertyRelative("m_profiles");
+            SerializedProperty propertySetups = propertySettings.FindPropertyRelative("m_setups");
 
-            float heightProfiles = propertyProfiles.isExpanded ? EditorGUI.GetPropertyHeight(propertyProfiles) + height + space : height;
+            float heightSetups = propertySetups.isExpanded ? EditorGUI.GetPropertyHeight(propertySetups) + height + space : height;
 
-            return height + space * 2F + heightProfiles + m_padding * 2F;
+            return height + space * 2F + heightSetups + m_padding * 2F;
         }
 
         protected override void OnCreateSettings(SerializedProperty propertyGroups, string name, SerializedProperty propertySettings)
@@ -109,9 +111,9 @@ namespace UGF.Build.Editor
         {
             if (!m_listDrawers.TryGetValue(name, out ReorderableListDrawer drawer))
             {
-                SerializedProperty propertyProfiles = propertySettings.FindPropertyRelative("m_profiles");
+                SerializedProperty propertySetups = propertySettings.FindPropertyRelative("m_setups");
 
-                drawer = new ReorderableListDrawer(propertyProfiles);
+                drawer = new ReorderableListDrawer(propertySetups);
 
                 m_listDrawers.Add(name, drawer);
             }

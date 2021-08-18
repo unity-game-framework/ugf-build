@@ -4,13 +4,13 @@ using UnityEngine;
 
 namespace UGF.Build.Editor
 {
-    [CustomPropertyDrawer(typeof(BuildPlatformSettings.ProfileEntry), true)]
-    internal class BuildPlatformSettingsProfileEntryPropertyDrawer : PropertyDrawerBase
+    [CustomPropertyDrawer(typeof(BuildPlatformSettings.SetupEntry), true)]
+    internal class BuildPlatformSettingsSetupEntryPropertyDrawer : PropertyDrawerBase
     {
         protected override void OnDrawProperty(Rect position, SerializedProperty serializedProperty, GUIContent label)
         {
             SerializedProperty propertyName = serializedProperty.FindPropertyRelative("m_name");
-            SerializedProperty propertyProfile = serializedProperty.FindPropertyRelative("m_profile");
+            SerializedProperty propertySetup = serializedProperty.FindPropertyRelative("m_setup");
 
             float height = EditorGUIUtility.singleLineHeight;
             float space = EditorGUIUtility.standardVerticalSpacing;
@@ -20,7 +20,7 @@ namespace UGF.Build.Editor
             var rectField = new Rect(rectName.xMax + space, position.y, position.width - width, position.height);
 
             EditorGUI.PropertyField(rectName, propertyName, GUIContent.none);
-            EditorGUI.PropertyField(rectField, propertyProfile, GUIContent.none);
+            EditorGUI.PropertyField(rectField, propertySetup, GUIContent.none);
         }
 
         public override float GetPropertyHeight(SerializedProperty serializedProperty, GUIContent label)

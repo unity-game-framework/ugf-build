@@ -4,6 +4,6 @@ namespace UGF.Build.Editor
 {
     public interface IBuildStep
     {
-        void Execute(string id, IBuildProfile profile, IContext context);
+        void Execute(IBuildSetup setup, IContext context);
     }
 }

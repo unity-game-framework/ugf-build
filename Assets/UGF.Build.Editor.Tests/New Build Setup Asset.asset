@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 73e460da9f8a49fe966d74544ade24d6, type: 3}
-  m_Name: New Build Profile Asset
+  m_Name: New Build Setup Asset
   m_EditorClassIdentifier: 
   m_steps: []

@@ -14,15 +14,14 @@ namespace UGF.Build.Editor
             Name = name;
         }
 
-        public void Execute(string id, IBuildProfile profile, IContext context)
+        public void Execute(IBuildSetup setup, IContext context)
         {
-            if (string.IsNullOrEmpty(id)) throw new ArgumentException("Value cannot be null or empty.", nameof(id));
-            if (profile == null) throw new ArgumentNullException(nameof(profile));
+            if (setup == null) throw new ArgumentNullException(nameof(setup));
             if (context == null) throw new ArgumentNullException(nameof(context));
 
-            OnExecute(id, profile, context);
+            OnExecute(setup, context);
         }
 
-        protected abstract void OnExecute(string id, IBuildProfile profile, IContext context);
+        protected abstract void OnExecute(IBuildSetup setup, IContext context);
     }
 }

@@ -27,12 +27,12 @@ MonoBehaviour:
     00000000:
       type: {class: BuildPlatformSettings, ns: UGF.Build.Editor, asm: UGF.Build.Editor}
       data:
-        m_profiles:
-        - m_name: 
-          m_profile: {fileID: 0}
+        m_setups:
+        - m_name: Test
+          m_setup: {fileID: 11400000, guid: a7a6d39e1d9cccc4cb52821a440e944a, type: 2}
     00000001:
       type: {class: BuildPlatformSettings, ns: UGF.Build.Editor, asm: UGF.Build.Editor}
       data:
-        m_profiles:
-        - m_name: 
-          m_profile: {fileID: 0}
+        m_setups:
+        - m_name: Test
+          m_setup: {fileID: 11400000, guid: a7a6d39e1d9cccc4cb52821a440e944a, type: 2}
