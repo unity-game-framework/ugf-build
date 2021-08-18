@@ -28,9 +28,11 @@ MonoBehaviour:
       type: {class: BuildPlatformSettings, ns: UGF.Build.Editor, asm: UGF.Build.Editor}
       data:
         m_profiles:
-        - m_name: Debug
-          m_profile: {fileID: 11400000, guid: 8219c44029c1cad46bd4404fae594f84, type: 2}
-        - m_name: Release
-          m_profile: {fileID: 11400000, guid: 8219c44029c1cad46bd4404fae594f84, type: 2}
+        - m_name: 
+          m_profile: {fileID: 0}
     00000001:
-      type: {class: , ns: , asm: }
+      type: {class: BuildPlatformSettings, ns: UGF.Build.Editor, asm: UGF.Build.Editor}
+      data:
+        m_profiles:
+        - m_name: 
+          m_profile: {fileID: 0}
