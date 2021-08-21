@@ -83,9 +83,9 @@ namespace UGF.Build.Editor
 
             string name = GetSelectedGroupName();
             SerializedProperty propertySettings = OnGetSettings(propertyGroups, name);
-            SerializedProperty propertySetups = propertySettings.FindPropertyRelative("m_setups");
+            ReorderableListDrawer drawer = GetListDrawer(name, propertySettings);
 
-            float heightSetups = propertySetups.isExpanded ? EditorGUI.GetPropertyHeight(propertySetups) + height + space : height;
+            float heightSetups = drawer.SerializedProperty.isExpanded ? drawer.GetHeight() : height;
 
             return height + space * 2F + heightSetups + m_padding * 2F;
         }

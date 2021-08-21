@@ -61,7 +61,7 @@ namespace UGF.Build.Editor
         {
             BuildEditorSettingsData data = BuildEditorSettings.Settings.GetData();
 
-            name = Environment.GetEnvironmentVariable(data.SetupEnvironmentVariableName);
+            name = Environment.GetEnvironmentVariable(data.SetupNameEnvironmentVariableName);
             return !string.IsNullOrEmpty(name);
         }
 
