@@ -9,9 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73e460da9f8a49fe966d74544ade24d6, type: 3}
-  m_Name: New Build Setup Asset
+  m_Script: {fileID: 11500000, guid: e3fceabd17204561ad76622e4a2bb72c, type: 3}
+  m_Name: New Test Build Step Asset
   m_EditorClassIdentifier: 
-  m_steps:
-  - m_enabled: 1
-    m_value: {fileID: 11400000, guid: 297da7354c6855e42a912dfabb58be59, type: 2}
