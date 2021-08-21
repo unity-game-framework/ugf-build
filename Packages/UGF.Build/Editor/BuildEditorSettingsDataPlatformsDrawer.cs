@@ -12,7 +12,7 @@ namespace UGF.Build.Editor
     internal class BuildEditorSettingsDataPlatformsDrawer : PlatformSettingsDrawer
     {
         private readonly Dictionary<string, ReorderableListDrawer> m_listDrawers = new Dictionary<string, ReorderableListDrawer>();
-        private static float m_padding = 5F;
+        private const float PADDING = 5F;
 
         public BuildEditorSettingsDataPlatformsDrawer()
         {
@@ -63,7 +63,7 @@ namespace UGF.Build.Editor
             PlatformInfo platform = GetPlatformInfo(name);
             SerializedProperty propertySettings = OnGetSettings(propertyGroups, name);
 
-            using (new LabelWidthChangeScope(-m_padding))
+            using (new LabelWidthChangeScope(-PADDING))
             {
                 var rectPlatformName = new Rect(position.x, position.y, position.width, height);
                 var rectSetups = new Rect(position.x, rectPlatformName.yMax + space, position.width, height);
@@ -87,7 +87,7 @@ namespace UGF.Build.Editor
 
             float heightSetups = drawer.SerializedProperty.isExpanded ? drawer.GetHeight() : height;
 
-            return height + space * 2F + heightSetups + m_padding * 2F;
+            return height + space * 2F + heightSetups + PADDING * 2F;
         }
 
         protected override void OnCreateSettings(SerializedProperty propertyGroups, string name, SerializedProperty propertySettings)
