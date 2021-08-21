@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_logEnable: 1
   m_logFilter: 4
+  m_setupNameEnvironmentVariableName: BuildSetup
   m_platforms:
     m_groups:
     - m_name: Standalone
