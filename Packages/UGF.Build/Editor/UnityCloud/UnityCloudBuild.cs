@@ -2,7 +2,7 @@
 
 namespace UGF.Build.Editor.UnityCloud
 {
-    public static class BuildUnityCloud
+    public static class UnityCloudBuild
     {
         [UsedImplicitly]
         public static void PreExport()

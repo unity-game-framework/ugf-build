@@ -2,7 +2,7 @@
 
 namespace UGF.Build.Editor.BatchMode
 {
-    public static class BuildBatchMode
+    public static class BatchModeBuild
     {
         [UsedImplicitly]
         public static void PreExport()
