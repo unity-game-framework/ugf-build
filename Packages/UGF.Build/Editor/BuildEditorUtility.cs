@@ -8,11 +8,16 @@ namespace UGF.Build.Editor
 {
     public static class BuildEditorUtility
     {
-        public static void Execute(BuildTargetGroup buildTargetGroup, IContext context)
+        public static void Execute()
+        {
+            Execute(new Context());
+        }
+
+        public static void Execute(IContext context)
         {
             string name = GetSetupNameFromEnvironmentVariables();
 
-            Execute(buildTargetGroup, name, context);
+            Execute(EditorUserBuildSettings.selectedBuildTargetGroup, name, context);
         }
 
         public static void Execute(BuildTargetGroup buildTargetGroup, string name, IContext context)

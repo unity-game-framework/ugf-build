@@ -1,5 +1,6 @@
 ﻿using System;
 using UGF.Build.Runtime.UnityCloud;
+using UGF.RuntimeTools.Runtime.Contexts;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
@@ -8,6 +9,14 @@ namespace UGF.Build.Editor.UnityCloud
     public static class UnityCloudBuildEditorUtility
     {
         private const string MANIFEST_RESOURCES_NAME = "UnityCloudBuildManifest.scriptable";
+
+        public static void Execute()
+        {
+            UnityCloudBuildManifest manifest = GetManifest();
+            var context = new Context { manifest };
+
+            BuildEditorUtility.Execute(context);
+        }
 
         public static bool HasManifest()
         {

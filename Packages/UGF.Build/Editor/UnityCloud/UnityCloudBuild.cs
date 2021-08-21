@@ -7,11 +7,13 @@ namespace UGF.Build.Editor.UnityCloud
         [UsedImplicitly]
         public static void PreExport()
         {
+            BuildEditorUtility.Execute();
         }
 
         [UsedImplicitly]
         public static void PostExport()
         {
+            BuildEditorUtility.Execute();
         }
     }
 }
