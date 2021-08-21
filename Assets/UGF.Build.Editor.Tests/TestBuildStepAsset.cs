@@ -1,4 +1,5 @@
 ﻿using UGF.RuntimeTools.Runtime.Contexts;
+using UnityEditor;
 using UnityEngine;
 
 namespace UGF.Build.Editor.Tests
@@ -20,6 +21,16 @@ namespace UGF.Build.Editor.Tests
 
         protected override void OnExecute(IBuildSetup setup, IContext context)
         {
+            Debug.Log($"Execute Build Step: {Name}");
+        }
+    }
+
+    internal static class TestBuildExecute
+    {
+        [MenuItem("Tests/TestBuildExecute")]
+        private static void Menu()
+        {
+            BuildEditorUtility.Execute(BuildTargetGroup.Standalone, "Test", new Context());
         }
     }
 }
