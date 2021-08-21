@@ -7,6 +7,10 @@ namespace UGF.Build.Editor
     {
         public string Name { get; }
 
+        protected BuildStep() : this("Untitled Step")
+        {
+        }
+
         protected BuildStep(string name)
         {
             if (string.IsNullOrEmpty(name)) throw new ArgumentException("Value cannot be null or empty.", nameof(name));
