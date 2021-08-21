@@ -4,13 +4,16 @@ UGF.Build
 
 ## Info
 
-- **Version**: `0.0.0-preview`
+- **Version**: `1.0.0-preview`
 - **Unity**: `2021.1`
 - **API Compatibility Level**: `.NET Standard 2.0`
 
 ### Dependencies
 
-- N/A
+- `com.ugf.editortools`: `1.12.0`
+- `com.ugf.customsettings`: `3.4.1`
+- `com.ugf.runtimetools`: `2.3.0`
+- `com.ugf.builder`: `2.0.1`
 
 
 ### Description
