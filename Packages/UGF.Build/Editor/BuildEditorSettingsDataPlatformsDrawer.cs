@@ -29,9 +29,8 @@ namespace UGF.Build.Editor
             for (int i = 0; i < PlatformEditorUtility.PlatformsAllAvailable.Count; i++)
             {
                 PlatformInfo platform = PlatformEditorUtility.PlatformsAllAvailable[i];
-                string name = platform.BuildTargetGroup.ToString();
 
-                AddGroupType(name, typeof(BuildPlatformSettings));
+                AddGroupType(platform.Name, typeof(BuildPlatformSettings));
             }
 
             foreach (KeyValuePair<string, ReorderableListDrawer> pair in m_listDrawers)
