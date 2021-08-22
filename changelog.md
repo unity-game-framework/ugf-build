@@ -5,6 +5,26 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.0-preview.2](https://github.com/unity-game-framework/ugf-build/releases/tag/1.0.0-preview.2) - 2021-08-22  
+
+### Release Notes
+
+- [Milestone](https://github.com/unity-game-framework/ugf-build/milestone/2?closed=1)  
+    
+
+### Added
+
+- Add logger setup for build setup execute ([#8](https://github.com/unity-game-framework/ugf-build/pull/8))  
+    - Add `BuildLogScope` disposable structure to create scope with specific logger options.
+    - Change `BuildEditorUtility.Execute()` methods to use log settings from `BuildEditorSettings` settings.
+- Add log report for each step ([#7](https://github.com/unity-game-framework/ugf-build/pull/7))  
+    - Add `BuildSetup` log start and end of setup and each step with execution time.
+
+### Fixed
+
+- Fix build platform tab display error ([#5](https://github.com/unity-game-framework/ugf-build/pull/5))  
+    - Fix error when initialize platforms to display build setups.
+
 ## [1.0.0-preview.1](https://github.com/unity-game-framework/ugf-build/releases/tag/1.0.0-preview.1) - 2021-08-22  
 
 ### Release Notes
