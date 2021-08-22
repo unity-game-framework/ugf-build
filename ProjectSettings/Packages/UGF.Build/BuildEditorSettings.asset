@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_logEnable: 1
-  m_logFilter: 4
+  m_logFilter: 3
   m_setupNameEnvironmentVariableName: BuildSetup
   m_platforms:
     m_groups:
