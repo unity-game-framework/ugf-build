@@ -31,22 +31,26 @@ namespace UGF.Build.Editor
         {
             Debug.Log($"Build Setup Start: '{Name}'.");
 
+            var setupWatch = Stopwatch.StartNew();
+
             for (int i = 0; i < Steps.Count; i++)
             {
                 IBuildStep step = Steps[i];
 
                 Debug.Log($"Build Step Start: '{step}'.");
 
-                var watch = Stopwatch.StartNew();
+                var stepWatch = Stopwatch.StartNew();
 
                 step.Execute(this, context);
 
-                watch.Stop();
+                stepWatch.Stop();
 
-                Debug.Log($"Build Step End: '{step}', time: '{watch.Elapsed.TotalMilliseconds}ms'.");
+                Debug.Log($"Build Step End: '{step}', time: '{stepWatch.Elapsed.TotalMilliseconds}ms'.");
             }
 
-            Debug.Log($"Build Setup End: '{Name}'.");
+            setupWatch.Stop();
+
+            Debug.Log($"Build Setup End: '{Name}', time: '{setupWatch.Elapsed.TotalMilliseconds}ms'.");
         }
     }
 }
