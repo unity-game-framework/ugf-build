@@ -24,9 +24,14 @@ namespace UGF.Build.Editor
         {
             if (context == null) throw new ArgumentNullException(nameof(context));
 
-            IBuildSetup setup = GetSetup(buildTargetGroup, name);
+            BuildEditorSettingsData settings = BuildEditorSettings.Settings.GetData();
 
-            setup.Execute(context);
+            using (new BuildLogScope(settings.LogEnable, settings.LogFilter))
+            {
+                IBuildSetup setup = GetSetup(buildTargetGroup, name);
+
+                setup.Execute(context);
+            }
         }
 
         public static IBuildSetup GetSetup(BuildTargetGroup buildTargetGroup, string name)
