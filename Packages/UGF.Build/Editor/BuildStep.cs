@@ -27,5 +27,10 @@ namespace UGF.Build.Editor
         }
 
         protected abstract void OnExecute(IBuildSetup setup, IContext context);
+
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }
