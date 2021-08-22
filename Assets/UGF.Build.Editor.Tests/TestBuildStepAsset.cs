@@ -22,6 +22,8 @@ namespace UGF.Build.Editor.Tests
         protected override void OnExecute(IBuildSetup setup, IContext context)
         {
             Debug.Log($"Execute Build Step: '{Name}'.");
+            Debug.LogWarning($"Execute Build Step: '{Name}'.");
+            Debug.LogError($"Execute Build Step: '{Name}'.");
         }
     }
 

@@ -7,7 +7,7 @@ namespace UGF.Build.Editor
     public class BuildEditorSettingsData : CustomSettingsData
     {
         [SerializeField] private bool m_logEnable = true;
-        [SerializeField] private LogType m_logFilter = LogType.Exception;
+        [SerializeField] private LogType m_logFilter = LogType.Log;
         [SerializeField] private string m_setupNameEnvironmentVariableName = "BuildSetup";
         [SerializeField] private PlatformSettings<BuildPlatformSettings> m_platforms = new PlatformSettings<BuildPlatformSettings>();
 
