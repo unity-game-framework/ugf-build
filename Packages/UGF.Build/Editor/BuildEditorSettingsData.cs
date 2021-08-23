@@ -8,7 +8,7 @@ namespace UGF.Build.Editor
     {
         [SerializeField] private bool m_logEnable = true;
         [SerializeField] private LogType m_logFilter = LogType.Log;
-        [SerializeField] private string m_setupNameEnvironmentVariableName = "BuildSetup";
+        [SerializeField] private string m_setupNameEnvironmentVariableName = "BUILD_SETUP";
         [SerializeField] private PlatformSettings<BuildPlatformSettings> m_platforms = new PlatformSettings<BuildPlatformSettings>();
 
         public bool LogEnable { get { return m_logEnable; } set { m_logEnable = value; } }

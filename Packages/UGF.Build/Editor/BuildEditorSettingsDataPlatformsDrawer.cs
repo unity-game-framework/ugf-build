@@ -59,17 +59,15 @@ namespace UGF.Build.Editor
             float height = EditorGUIUtility.singleLineHeight;
             float space = EditorGUIUtility.standardVerticalSpacing;
 
-            PlatformInfo platform = GetPlatformInfo(name);
             SerializedProperty propertySettings = OnGetSettings(propertyGroups, name);
+            ReorderableListDrawer drawer = GetListDrawer(name, propertySettings);
 
             using (new LabelWidthChangeScope(-PADDING))
             {
                 var rectPlatformName = new Rect(position.x, position.y, position.width, height);
                 var rectSetups = new Rect(position.x, rectPlatformName.yMax + space, position.width, height);
 
-                EditorGUI.LabelField(rectPlatformName, $"Settings for {platform.Label.text}");
-
-                ReorderableListDrawer drawer = GetListDrawer(name, propertySettings);
+                OnDrawSettingsPlatformName(rectPlatformName, propertyGroups, name);
 
                 drawer.DrawGUI(rectSetups);
             }
