@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.0-preview.3](https://github.com/unity-game-framework/ugf-build/releases/tag/1.0.0-preview.3) - 2021-08-23  
+
+### Release Notes
+
+- [Milestone](https://github.com/unity-game-framework/ugf-build/milestone/3?closed=1)  
+    
+
+### Fixed
+
+- Fix missing SetupNameEnvironmentVariableName in editor settings ([#11](https://github.com/unity-game-framework/ugf-build/pull/11))  
+    - Update dependencies: `com.ugf.editortools` to `1.13.0` version.
+    - Fix missing `SetupNameEnvironmentVariableName` property in _BuildEditorSettings_ project settings.
+
 ## [1.0.0-preview.2](https://github.com/unity-game-framework/ugf-build/releases/tag/1.0.0-preview.2) - 2021-08-22  
 
 ### Release Notes
