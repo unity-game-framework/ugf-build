@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_logEnable: 1
   m_logFilter: 3
-  m_setupNameEnvironmentVariableName: BUILD_SETUP
+  m_preExportSetupNameEnvironmentVariable: BUILD_PRE_EXPORT_SETUP
+  m_postExportSetupNameEnvironmentVariable: BUILD_POST_EXPORT_SETUP
   m_platforms:
     m_groups:
     - m_name: Standalone

@@ -8,15 +8,24 @@ namespace UGF.Build.Editor
 {
     public static class BuildEditorUtility
     {
-        public static void Execute()
+        public static void ExecutePreExport(IContext context)
         {
-            Execute(new Context());
+            BuildEditorSettingsData settings = BuildEditorSettings.Settings.GetData();
+            string name = GetSetupNameFromEnvironmentVariables(settings.PreExportSetupNameEnvironmentVariable);
+
+            Execute(name, context);
         }
 
-        public static void Execute(IContext context)
+        public static void ExecutePostExport(IContext context)
         {
-            string name = GetSetupNameFromEnvironmentVariables();
+            BuildEditorSettingsData settings = BuildEditorSettings.Settings.GetData();
+            string name = GetSetupNameFromEnvironmentVariables(settings.PostExportSetupNameEnvironmentVariable);
 
+            Execute(name, context);
+        }
+
+        public static void Execute(string name, IContext context)
+        {
             Execute(EditorUserBuildSettings.selectedBuildTargetGroup, name, context);
         }
 
@@ -57,16 +66,16 @@ namespace UGF.Build.Editor
             return data.Platforms.TryGetSettings(buildTargetGroup, out BuildPlatformSettings settings) && TryGetSetup(settings, name, out setup);
         }
 
-        public static string GetSetupNameFromEnvironmentVariables()
+        public static string GetSetupNameFromEnvironmentVariables(string environmentVariableName)
         {
-            return TryGetSetupNameFromEnvironmentVariables(out string name) ? name : throw new ArgumentException("Environment variable not found.");
+            return TryGetSetupNameFromEnvironmentVariables(environmentVariableName, out string name) ? name : throw new ArgumentException("Environment variable not found.");
         }
 
-        public static bool TryGetSetupNameFromEnvironmentVariables(out string name)
+        public static bool TryGetSetupNameFromEnvironmentVariables(string environmentVariableName, out string name)
         {
-            BuildEditorSettingsData data = BuildEditorSettings.Settings.GetData();
+            if (string.IsNullOrEmpty(environmentVariableName)) throw new ArgumentException("Value cannot be null or empty.", nameof(environmentVariableName));
 
-            name = Environment.GetEnvironmentVariable(data.SetupNameEnvironmentVariableName);
+            name = Environment.GetEnvironmentVariable(environmentVariableName);
             return !string.IsNullOrEmpty(name);
         }
 
