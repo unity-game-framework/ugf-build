@@ -5,6 +5,32 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.0-preview.4](https://github.com/unity-game-framework/ugf-build/releases/tag/1.0.0-preview.4) - 2021-09-04  
+
+### Release Notes
+
+- [Milestone](https://github.com/unity-game-framework/ugf-build/milestone/4?closed=1)  
+    
+
+### Added
+
+- Add stopwatch scope ([#16](https://github.com/unity-game-framework/ugf-build/pull/16))  
+    - Add `BuildStopwatch` structure to log and measure execution of any part of the build process.
+- Add build step auto name ([#15](https://github.com/unity-game-framework/ugf-build/pull/15))  
+    - Add `BuildStep` auto naming using name of the type when creating class without specified name.
+
+### Changed
+
+- Add pre and post export setup name env variable settings ([#17](https://github.com/unity-game-framework/ugf-build/pull/17))  
+    - Add `BuildEditorSettingsData.PreExportSetupNameEnvironmentVariable` property to define environment variable with setup name for pre export execution.
+    - Add `BuildEditorSettingsData.PostExportSetupNameEnvironmentVariable` property to define environment variable with setup name for post export execution.
+    - Add `BuildEditorUtility.ExecutePreExport()` and `PostExport()` methods used to execute setup from environment variables and specified context.
+    - Change `BuildEditorUtility.TryGetSetupNameFromEnvironmentVariables()` and `GetSetupNameFromEnvironmentVariables()` methods to require environment variable name to get setup name from.
+    - Fix `UnityCloudBuild.PreExport()` and `PostExport()` methods create context with _Unity Cloud Build_ manifest included.
+    - Remove `BuildEditorSettingsData.SetupNameEnvironmentVariableName` property, use `PreExportSetupNameEnvironmentVariable` and `PostExportSetupNameEnvironmentVariable` properties instead.
+    - Remove `BuildEditorUtility.Execute()` method with zero arguments.
+    - Remove `UnityCloudBuildEditorUtility.Execute()` method.
+
 ## [1.0.0-preview.3](https://github.com/unity-game-framework/ugf-build/releases/tag/1.0.0-preview.3) - 2021-08-23  
 
 ### Release Notes
