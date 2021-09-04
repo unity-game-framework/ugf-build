@@ -94,16 +94,6 @@ namespace UGF.Build.Editor
             GetListDrawer(name, propertySettings);
         }
 
-        private PlatformInfo GetPlatformInfo(string name)
-        {
-            if (string.IsNullOrEmpty(name)) throw new ArgumentException("Value cannot be null or empty.", nameof(name));
-
-            var buildTargetGroup = (BuildTargetGroup)Enum.Parse(typeof(BuildTargetGroup), name, true);
-            PlatformInfo platform = PlatformEditorUtility.GetPlatform(buildTargetGroup);
-
-            return platform;
-        }
-
         private ReorderableListDrawer GetListDrawer(string name, SerializedProperty propertySettings)
         {
             if (!m_listDrawers.TryGetValue(name, out ReorderableListDrawer drawer))
