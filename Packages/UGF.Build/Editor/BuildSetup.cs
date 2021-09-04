@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using UGF.RuntimeTools.Runtime.Contexts;
-using Debug = UnityEngine.Debug;
 
 namespace UGF.Build.Editor
 {
@@ -29,28 +27,18 @@ namespace UGF.Build.Editor
 
         protected virtual void OnExecute(IContext context)
         {
-            Debug.Log($"Build Setup Start: '{Name}'.");
-
-            var setupWatch = Stopwatch.StartNew();
-
-            for (int i = 0; i < Steps.Count; i++)
+            using (new BuildStopwatch(this))
             {
-                IBuildStep step = Steps[i];
+                for (int i = 0; i < Steps.Count; i++)
+                {
+                    IBuildStep step = Steps[i];
 
-                Debug.Log($"Build Step Start: '{step}'.");
-
-                var stepWatch = Stopwatch.StartNew();
-
-                step.Execute(this, context);
-
-                stepWatch.Stop();
-
-                Debug.Log($"Build Step End: '{step}', time: '{stepWatch.Elapsed.TotalMilliseconds}ms'.");
+                    using (new BuildStopwatch(step))
+                    {
+                        step.Execute(this, context);
+                    }
+                }
             }
-
-            setupWatch.Stop();
-
-            Debug.Log($"Build Setup End: '{Name}', time: '{setupWatch.Elapsed.TotalMilliseconds}ms'.");
         }
 
         public override string ToString()
