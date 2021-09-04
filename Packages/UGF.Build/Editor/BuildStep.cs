@@ -1,5 +1,6 @@
 ﻿using System;
 using UGF.RuntimeTools.Runtime.Contexts;
+using UnityEditor;
 
 namespace UGF.Build.Editor
 {
@@ -7,8 +8,9 @@ namespace UGF.Build.Editor
     {
         public string Name { get; }
 
-        protected BuildStep() : this("Untitled Step")
+        protected BuildStep()
         {
+            Name = ObjectNames.NicifyVariableName(GetType().Name);
         }
 
         protected BuildStep(string name)
@@ -30,7 +32,7 @@ namespace UGF.Build.Editor
 
         public override string ToString()
         {
-            return Name;
+            return $"{Name} ({GetType().FullName})";
         }
     }
 }
