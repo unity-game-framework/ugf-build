@@ -9,7 +9,8 @@ namespace UGF.Build.Editor
         private readonly BuildEditorSettingsDataPlatformsDrawer m_platformsDrawer = new BuildEditorSettingsDataPlatformsDrawer();
         private SerializedProperty m_propertyLogEnable;
         private SerializedProperty m_propertyLogFilter;
-        private SerializedProperty m_propertySetupNameEnvironmentVariableName;
+        private SerializedProperty m_propertyPreExportSetupNameEnvironmentVariable;
+        private SerializedProperty m_propertyPostExportSetupNameEnvironmentVariable;
         private SerializedProperty m_propertyPlatformsGroups;
 
         private void OnEnable()
@@ -18,7 +19,8 @@ namespace UGF.Build.Editor
 
             m_propertyLogEnable = serializedObject.FindProperty("m_logEnable");
             m_propertyLogFilter = serializedObject.FindProperty("m_logFilter");
-            m_propertySetupNameEnvironmentVariableName = serializedObject.FindProperty("m_setupNameEnvironmentVariableName");
+            m_propertyPreExportSetupNameEnvironmentVariable = serializedObject.FindProperty("m_preExportSetupNameEnvironmentVariable");
+            m_propertyPostExportSetupNameEnvironmentVariable = serializedObject.FindProperty("m_postExportSetupNameEnvironmentVariable");
             m_propertyPlatformsGroups = serializedObject.FindProperty("m_platforms.m_groups");
         }
 
@@ -33,7 +35,8 @@ namespace UGF.Build.Editor
             {
                 EditorGUILayout.PropertyField(m_propertyLogEnable);
                 EditorGUILayout.PropertyField(m_propertyLogFilter);
-                EditorGUILayout.PropertyField(m_propertySetupNameEnvironmentVariableName);
+                EditorGUILayout.PropertyField(m_propertyPreExportSetupNameEnvironmentVariable);
+                EditorGUILayout.PropertyField(m_propertyPostExportSetupNameEnvironmentVariable);
                 EditorGUILayout.Space();
 
                 m_platformsDrawer.DrawGUILayout(m_propertyPlatformsGroups);

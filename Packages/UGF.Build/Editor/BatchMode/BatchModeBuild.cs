@@ -1,4 +1,5 @@
 ﻿using JetBrains.Annotations;
+using UGF.RuntimeTools.Runtime.Contexts;
 
 namespace UGF.Build.Editor.BatchMode
 {
@@ -7,13 +8,13 @@ namespace UGF.Build.Editor.BatchMode
         [UsedImplicitly]
         public static void PreExport()
         {
-            BuildEditorUtility.Execute();
+            BuildEditorUtility.ExecutePreExport(new Context());
         }
 
         [UsedImplicitly]
         public static void PostExport()
         {
-            BuildEditorUtility.Execute();
+            BuildEditorUtility.ExecutePostExport(new Context());
         }
     }
 }
