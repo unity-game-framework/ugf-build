@@ -52,5 +52,10 @@ namespace UGF.Build.Editor
 
             Debug.Log($"Build Setup End: '{Name}', time: '{setupWatch.Elapsed.TotalMilliseconds}ms'.");
         }
+
+        public override string ToString()
+        {
+            return $"{Name} ({GetType().FullName})";
+        }
     }
 }
