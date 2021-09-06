@@ -37,7 +37,9 @@ namespace UGF.Build.Editor
                 EditorGUILayout.PropertyField(m_propertyLogFilter);
                 EditorGUILayout.PropertyField(m_propertyPreExportSetupNameEnvironmentVariable);
                 EditorGUILayout.PropertyField(m_propertyPostExportSetupNameEnvironmentVariable);
+
                 EditorGUILayout.Space();
+                EditorGUILayout.LabelField("Build Setup Settings", EditorStyles.boldLabel);
 
                 m_platformsDrawer.DrawGUILayout(m_propertyPlatformsGroups);
             }
