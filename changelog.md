@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.0-preview.5](https://github.com/unity-game-framework/ugf-build/releases/tag/1.0.0-preview.5) - 2021-09-06  
+
+### Release Notes
+
+- [Milestone](https://github.com/unity-game-framework/ugf-build/milestone/5?closed=1)  
+    
+
+### Added
+
+- Add header display for platform settings ([#20](https://github.com/unity-game-framework/ugf-build/pull/20))  
+    - Add missing display label under the setup platform settings section.
+
 ## [1.0.0-preview.4](https://github.com/unity-game-framework/ugf-build/releases/tag/1.0.0-preview.4) - 2021-09-04  
 
 ### Release Notes
