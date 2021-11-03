@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.0-preview.6](https://github.com/unity-game-framework/ugf-build/releases/tag/1.0.0-preview.6) - 2021-11-03  
+
+### Release Notes
+
+- [Milestone](https://github.com/unity-game-framework/ugf-build/milestone/6?closed=1)  
+    
+
+### Added
+
+- Add get of the build report object ([#22](https://github.com/unity-game-framework/ugf-build/pull/22))  
+    - Add `BuildEditorUtility.TryGetBuildReport()` method to get `BuildReport` object after build process.
+
 ## [1.0.0-preview.5](https://github.com/unity-game-framework/ugf-build/releases/tag/1.0.0-preview.5) - 2021-09-06  
 
 ### Release Notes
