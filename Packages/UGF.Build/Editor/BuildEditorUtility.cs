@@ -1,13 +1,35 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using UGF.EditorTools.Editor.IMGUI.PlatformSettings;
+using UGF.EditorTools.Editor.Yaml;
 using UGF.RuntimeTools.Runtime.Contexts;
 using UnityEditor;
+using UnityEditor.Build.Reporting;
 
 namespace UGF.Build.Editor
 {
     public static class BuildEditorUtility
     {
+        private const string BUILD_REPORT_PATH = "Library/LastBuild.buildreport";
+
+        public static BuildReport GetBuildReport()
+        {
+            return TryGetBuildReport(out BuildReport report) ? report : throw new ArgumentException("Build report not found.");
+        }
+
+        public static bool TryGetBuildReport(out BuildReport report)
+        {
+            if (File.Exists(BUILD_REPORT_PATH))
+            {
+                report = EditorYamlUtility.FromYamlAtPath<BuildReport>(BUILD_REPORT_PATH);
+                return true;
+            }
+
+            report = default;
+            return false;
+        }
+
         public static void ExecutePreExport(IContext context)
         {
             BuildEditorSettingsData settings = BuildEditorSettings.Settings.GetData();
