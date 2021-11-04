@@ -1,6 +1,7 @@
 ﻿using JetBrains.Annotations;
 using UGF.Build.Runtime.UnityCloud;
 using UGF.RuntimeTools.Runtime.Contexts;
+using UnityEditor.Build.Reporting;
 
 namespace UGF.Build.Editor.UnityCloud
 {
@@ -18,8 +19,14 @@ namespace UGF.Build.Editor.UnityCloud
         public static void PostExport()
         {
             UnityCloudBuildManifest manifest = UnityCloudBuildEditorUtility.GetManifest();
+            var context = new Context { manifest };
 
-            BuildEditorUtility.ExecutePostExport(new Context { manifest });
+            if (BuildEditorUtility.TryGetBuildReport(out BuildReport report))
+            {
+                context.Add(report);
+            }
+
+            BuildEditorUtility.ExecutePostExport(context);
         }
     }
 }
