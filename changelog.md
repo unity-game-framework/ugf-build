@@ -5,6 +5,24 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.0](https://github.com/unity-game-framework/ugf-build/releases/tag/1.0.0) - 2021-11-04  
+
+### Release Notes
+
+- [Milestone](https://github.com/unity-game-framework/ugf-build/milestone/7?closed=1)  
+    
+
+### Added
+
+- Add build report for context of post export execution ([#26](https://github.com/unity-game-framework/ugf-build/pull/26))  
+    - Add `BuildReport` object into context for `BatchModeBuild` and `UnityCloudBuild` _PostExport_ methods.
+
+### Changed
+
+- Update dependencies ([#25](https://github.com/unity-game-framework/ugf-build/pull/25))  
+    - Update dependencies: `com.ugf.editortools` to `2.0.0` version.
+    - Change package _Unity_ version to `2021.2`.
+
 ## [1.0.0-preview.6](https://github.com/unity-game-framework/ugf-build/releases/tag/1.0.0-preview.6) - 2021-11-03  
 
 ### Release Notes
