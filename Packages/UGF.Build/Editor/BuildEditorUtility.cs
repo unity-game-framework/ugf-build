@@ -6,7 +6,6 @@ using UGF.EditorTools.Editor.Yaml;
 using UGF.RuntimeTools.Runtime.Contexts;
 using UnityEditor;
 using UnityEditor.Build.Reporting;
-using Object = UnityEngine.Object;
 
 namespace UGF.Build.Editor
 {
@@ -112,22 +111,8 @@ namespace UGF.Build.Editor
 
         public static bool TryGetBuildReport(out BuildReport report)
         {
-            if (File.Exists(BUILD_REPORT_PATH))
-            {
-                Object[] assets = EditorYamlUtility.FromYamlAllAtPath(BUILD_REPORT_PATH);
-
-                foreach (Object asset in assets)
-                {
-                    if (asset is BuildReport buildReportAsset)
-                    {
-                        report = buildReportAsset;
-                        return true;
-                    }
-                }
-            }
-
-            report = default;
-            return false;
+            report = null;
+            return File.Exists(BUILD_REPORT_PATH) && EditorYamlUtility.TryFromYamlAtPath(BUILD_REPORT_PATH, out report);
         }
 
         public static bool TryGetArgumentValues(IReadOnlyList<string> arguments, string name, out string value)
