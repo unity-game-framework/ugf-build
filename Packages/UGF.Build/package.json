@@ -2,7 +2,7 @@
   "name": "com.ugf.build",
   "displayName": "UGF.Build",
   "version": "1.0.0-preview.6",
-  "unity": "2021.1",
+  "unity": "2021.2",
   "apiCompatibility": ".NET Standard 2.0",
   "description": "Provides configurable build process.",
   "author": {
