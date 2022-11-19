@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UGF.EditorTools.Editor.IMGUI;
 using UGF.EditorTools.Editor.IMGUI.PlatformSettings;
 using UGF.EditorTools.Editor.IMGUI.Scopes;
@@ -100,7 +99,7 @@ namespace UGF.Build.Editor
             {
                 SerializedProperty propertySetups = propertySettings.FindPropertyRelative("m_setups");
 
-                drawer = new ReorderableListDrawer(propertySetups);
+                drawer = new ReorderableListKeyAndValueDrawer(propertySetups, "m_name", "m_setup");
 
                 m_listDrawers.Add(name, drawer);
             }

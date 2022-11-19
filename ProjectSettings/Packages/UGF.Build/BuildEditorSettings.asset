@@ -20,21 +20,36 @@ MonoBehaviour:
     m_groups:
     - m_name: Standalone
       m_settings:
-        id: 0
+        rid: 0
     - m_name: Android
       m_settings:
-        id: 1
+        rid: 1
+    - m_name: Server
+      m_settings:
+        rid: 4257731682384740352
+    - m_name: iPhone
+      m_settings:
+        rid: 4257731682384740353
   references:
-    version: 1
-    00000000:
+    version: 2
+    RefIds:
+    - rid: 0
       type: {class: BuildPlatformSettings, ns: UGF.Build.Editor, asm: UGF.Build.Editor}
       data:
         m_setups:
         - m_name: Test
           m_setup: {fileID: 11400000, guid: a7a6d39e1d9cccc4cb52821a440e944a, type: 2}
-    00000001:
+    - rid: 1
       type: {class: BuildPlatformSettings, ns: UGF.Build.Editor, asm: UGF.Build.Editor}
       data:
         m_setups:
         - m_name: Test
           m_setup: {fileID: 11400000, guid: a7a6d39e1d9cccc4cb52821a440e944a, type: 2}
+    - rid: 4257731682384740352
+      type: {class: BuildPlatformSettings, ns: UGF.Build.Editor, asm: UGF.Build.Editor}
+      data:
+        m_setups: []
+    - rid: 4257731682384740353
+      type: {class: BuildPlatformSettings, ns: UGF.Build.Editor, asm: UGF.Build.Editor}
+      data:
+        m_setups: []
