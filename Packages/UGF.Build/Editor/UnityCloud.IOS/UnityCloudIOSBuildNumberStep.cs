@@ -1,5 +1,6 @@
 ﻿using System;
 using UGF.Build.Runtime.UnityCloud;
+using UGF.Logs.Runtime;
 using UGF.RuntimeTools.Runtime.Contexts;
 using UnityEditor;
 
@@ -21,6 +22,8 @@ namespace UGF.Build.Editor.UnityCloud.IOS
             var manifest = context.Get<UnityCloudBuildManifest>();
 
             PlayerSettings.iOS.buildNumber = string.Format(Format, PlayerSettings.bundleVersion, manifest.BuildNumber);
+
+            Log.Info("Unity Cloud iOS build number set", new { PlayerSettings.iOS.buildNumber });
         }
     }
 }

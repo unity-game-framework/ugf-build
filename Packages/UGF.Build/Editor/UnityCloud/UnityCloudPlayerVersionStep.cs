@@ -1,5 +1,6 @@
 ﻿using System;
 using UGF.Build.Runtime.UnityCloud;
+using UGF.Logs.Runtime;
 using UGF.RuntimeTools.Runtime.Contexts;
 using UnityEditor;
 
@@ -24,6 +25,8 @@ namespace UGF.Build.Editor.UnityCloud
             if (string.IsNullOrEmpty(version)) throw new ArgumentException("Player bundle version can not be null or empty.");
 
             PlayerSettings.bundleVersion = string.Format(Format, version, manifest.BuildNumber);
+
+            Log.Info("Unity Cloud player version set", new { PlayerSettings.bundleVersion });
         }
     }
 }

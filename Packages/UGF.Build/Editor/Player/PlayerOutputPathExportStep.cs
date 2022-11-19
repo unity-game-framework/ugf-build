@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using UGF.Logs.Runtime;
 using UGF.RuntimeTools.Runtime.Contexts;
 using UnityEditor.Build.Reporting;
 
@@ -21,6 +22,8 @@ namespace UGF.Build.Editor.Player
             var report = context.Get<BuildReport>();
 
             File.WriteAllText(Path, report.summary.outputPath);
+
+            Log.Info("Player output path export", new { Path, report.summary.outputPath });
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using UGF.Logs.Runtime;
 using UGF.RuntimeTools.Runtime.Contexts;
 using UnityEditor;
 using UnityEngine;
@@ -29,6 +30,8 @@ namespace UGF.Build.Editor.Player
             if (SetPlayerBundleVersion)
             {
                 PlayerSettings.bundleVersion = data.Version;
+
+                Log.Info("Player version set", new { PlayerSettings.bundleVersion });
             }
         }
     }
