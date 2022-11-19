@@ -1,5 +1,6 @@
 ﻿using System;
 using UGF.Build.Runtime.UnityCloud;
+using UGF.Logs.Runtime;
 using UGF.RuntimeTools.Runtime.Contexts;
 using UnityEditor;
 
@@ -17,6 +18,8 @@ namespace UGF.Build.Editor.UnityCloud.Android
             }
 
             PlayerSettings.Android.bundleVersionCode = number;
+
+            Log.Info("Unity Cloud Android bundle version code set", new { PlayerSettings.Android.bundleVersionCode });
         }
     }
 }

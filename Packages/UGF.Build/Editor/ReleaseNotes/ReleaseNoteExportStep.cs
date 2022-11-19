@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Text;
+using UGF.Logs.Runtime;
 using UGF.RuntimeTools.Runtime.Contexts;
 
 namespace UGF.Build.Editor.ReleaseNotes
@@ -23,6 +24,8 @@ namespace UGF.Build.Editor.ReleaseNotes
             var data = context.Get<ReleaseNoteData>();
 
             File.WriteAllText(Path, data.GetString(), Encoding);
+
+            Log.Info("Release Notes exported", new { Path });
         }
     }
 }
