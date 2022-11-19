@@ -14,3 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_steps:
   - {fileID: 11400000, guid: 297da7354c6855e42a912dfabb58be59, type: 2}
+  - {fileID: 11400000, guid: dbddf6cd953498e47b7e6f7dade31d50, type: 2}
+  - {fileID: 11400000, guid: dd610bfbbcd63274ca80dbd6e2169437, type: 2}
+  - {fileID: 11400000, guid: ad5177a8e1cfd224c9629ce01756b8af, type: 2}
+  - {fileID: 11400000, guid: 48997564f88353a43a4503977b4213ac, type: 2}
+  - {fileID: 11400000, guid: 297da7354c6855e42a912dfabb58be59, type: 2}
+  - {fileID: 11400000, guid: 7749ef54ced6bdd4caaad2554317c816, type: 2}
