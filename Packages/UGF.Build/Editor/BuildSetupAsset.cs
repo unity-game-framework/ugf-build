@@ -9,26 +9,35 @@ namespace UGF.Build.Editor
     public class BuildSetupAsset : BuilderAsset<IBuildSetup>
     {
         [SerializeField] private List<EnabledProperty<BuildStepAsset>> m_steps = new List<EnabledProperty<BuildStepAsset>>();
+        [SerializeField] private List<BuildStepCollectionAsset> m_collections = new List<BuildStepCollectionAsset>();
 
         public List<EnabledProperty<BuildStepAsset>> Steps { get { return m_steps; } }
+        public List<BuildStepCollectionAsset> Collections { get { return m_collections; } }
 
         protected override IBuildSetup OnBuild()
         {
-            var profile = new BuildSetup(name);
+            var setup = new BuildSetup(name);
 
             for (int i = 0; i < m_steps.Count; i++)
             {
-                EnabledProperty<BuildStepAsset> element = m_steps[i];
+                EnabledProperty<BuildStepAsset> stepProperty = m_steps[i];
 
-                if (element.Enabled)
+                if (stepProperty.Enabled)
                 {
-                    IBuildStep step = element.Value.Build();
+                    IBuildStep step = stepProperty.Value.Build();
 
-                    profile.Steps.Add(step);
+                    setup.Steps.Add(step);
                 }
             }
 
-            return profile;
+            for (int i = 0; i < m_collections.Count; i++)
+            {
+                BuildStepCollectionAsset collection = m_collections[i];
+
+                collection.GetSteps(setup.Steps);
+            }
+
+            return setup;
         }
     }
 }
