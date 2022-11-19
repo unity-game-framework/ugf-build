@@ -5,6 +5,39 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0](https://github.com/unity-game-framework/ugf-build/releases/tag/1.1.0) - 2022-11-19  
+
+### Release Notes
+
+- [Milestone](https://github.com/unity-game-framework/ugf-build/milestone/8?closed=1)  
+    
+
+### Added
+
+- Add step logs ([#38](https://github.com/unity-game-framework/ugf-build/issues/38))  
+    - Update dependencies: add `com.ugf.logs` of `5.3.0` version.
+    - Add `PlayerOutputPathExportStep`, `PlayerVersionExternalStep`, `ReleaseNoteExportStep`, `UnityCloudAndroidVersionCodeStep`, `UnityCloudIOSBuildNumberStep` and `UnityCloudPlayerVersionStep` classes execute logs.
+- Add player output path export step ([#33](https://github.com/unity-game-framework/ugf-build/issues/33))  
+    - Add `PlayerOutputPathExportStep` class as build step to export build output path to the external file.
+- Add unity cloud player version step ([#32](https://github.com/unity-game-framework/ugf-build/issues/32))  
+    - Add `UnityCloudPlayerVersionStep` class as build step to setup player bundle version using _Unity Cloud_ manifest data.
+- Add unity cloud android and ios bundle version step ([#30](https://github.com/unity-game-framework/ugf-build/issues/30))  
+    - Add `UnityCloudAndroidVersionCodeStep` class as build step to setup _Android_ bundle version code using _Unity Cloud_ manifest data.
+    - Add `UnityCloudIOSBuildNumberStep` class as build step to setup _iOS_ build number using _Unity Cloud_ manifest data.
+- Add external player version step ([#29](https://github.com/unity-game-framework/ugf-build/issues/29))  
+    - Add `PlayerVersionExternalStep` class as build step to load player version from external file and setup as player bundle version.
+- Add release note step ([#28](https://github.com/unity-game-framework/ugf-build/issues/28))  
+    - Add `ReleaseNoteData` class to build release note text.
+    - Add `ReleaseNoteStep` class as build step to create instance of the `ReleaseNoteStep` data.
+    - Add `ReleaseNoteExportStep` class as build step to export `ReleaseNoteData` data as file.
+    - Add `UnityCloudBuildManifestReleaseNoteStep` class as build step to add `UnityCloudBuildManifest` data to the release notes.
+- Add build step collections ([#27](https://github.com/unity-game-framework/ugf-build/issues/27))  
+    - Update dependencies: `com.ugf.editortools` to `2.13.0`, `com.ugf.runtimetools` to `2.17.0` and `com.ugf.builder` to `2.0.2` versions.
+    - Update package _Unity_ version to `2021.3`.
+    - Add `BuildSetupAsset.Collections` property to specify collections of steps.
+    - Add `BuildStepCollectionListAsset` class as default implementation of the steps collection defined as list.
+    - Add `BuildStepCollectionAsset` abstract class to implement collection of steps.
+
 ## [1.0.0](https://github.com/unity-game-framework/ugf-build/releases/tag/1.0.0) - 2021-11-04  
 
 ### Release Notes
