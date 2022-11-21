@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.0](https://github.com/unity-game-framework/ugf-build/releases/tag/1.2.0) - 2022-11-21  
+
+### Release Notes
+
+- [Milestone](https://github.com/unity-game-framework/ugf-build/milestone/9?closed=1)  
+    
+
+### Added
+
+- Add scene build list step ([#42](https://github.com/unity-game-framework/ugf-build/issues/42))  
+    - Add `PlayerScenesStep` class as build step to specify scenes in the player.
+
 ## [1.1.0](https://github.com/unity-game-framework/ugf-build/releases/tag/1.1.0) - 2022-11-19  
 
 ### Release Notes
