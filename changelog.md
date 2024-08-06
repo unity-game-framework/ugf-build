@@ -5,6 +5,22 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.0](https://github.com/unity-game-framework/ugf-build/releases/tag/1.3.0) - 2024-08-06  
+
+### Release Notes
+
+- [Milestone](https://github.com/unity-game-framework/ugf-build/milestone/10?closed=1)  
+    
+
+### Added
+
+- Add path build step ([#44](https://github.com/unity-game-framework/ugf-build/issues/44))  
+    - Update dependencies: `com.ugf.editortools` to `2.18.0`, `com.ugf.runtimetools` to `2.19.0` and `com.ugf.logs` to `5.4.0` versions.
+    - Update package _Unity_ version to `2023.2`.
+    - Update package registry to _UPM Hub_.
+    - Add `FileStep` and related classes as build step to work with files.
+    - Add `BuildStep.Logger` property as labeled logger for the step.
+
 ## [1.2.0](https://github.com/unity-game-framework/ugf-build/releases/tag/1.2.0) - 2022-11-21  
 
 ### Release Notes
