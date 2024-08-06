@@ -2,7 +2,7 @@
   "name": "com.ugf.build",
   "displayName": "UGF.Build",
   "version": "1.2.0",
-  "unity": "2021.3",
+  "unity": "2023.2",
   "apiCompatibility": ".NET Standard 2.1",
   "description": "Provides configurable build process.",
   "author": {
@@ -16,13 +16,13 @@
   "changelogUrl": "https://github.com/unity-game-framework/ugf-build/blob/main/changelog.md",
   "licensesUrl": "https://github.com/unity-game-framework/ugf-build/blob/main/license",
   "publishConfig": {
-    "registry": "https://unitygameframework.jfrog.io/artifactory/api/npm/default"
+    "registry": "https://api.upmhub.org/registries/unity-game-framework"
   },
   "dependencies": {
     "com.ugf.customsettings": "3.4.1",
-    "com.ugf.editortools": "2.13.0",
-    "com.ugf.runtimetools": "2.17.0",
+    "com.ugf.editortools": "2.18.0",
+    "com.ugf.runtimetools": "2.19.0",
     "com.ugf.builder": "2.0.2",
-    "com.ugf.logs": "5.3.0"
+    "com.ugf.logs": "5.4.0"
   }
 }
